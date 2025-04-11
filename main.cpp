@@ -13,25 +13,22 @@ int main(int argc, char* argv[]) {
     } */
 
 
-    string input = "new2.jpeg";
-    string output = "new2.png";
+    string input = "new1.jpeg";
+    //string output = "new2.png";
 
     Photo image(SPATH + input);
-    // image.show("Original image");
+    //image.show("Original image");
     
     Photo nr(image.getNR());
 
-    // imwrite(DPATH + output, nr.get_image());
+    image.set_path("orig");
+    nr.set_path("nr");
 
-    cout << image.countNoise() << "\t" << nr.countNoise() << endl;
+    cout << image.countNoise() << '\t' << nr.countNoise() << endl;
 
 
 
-    /* image.showHist();
-    image.showHE();
-    image.showCLAHE();
-    image.showGC();
-    image.showBHE(); */
+
     waitKey(0);
     return 0;
 }
